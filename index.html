@@ -44,6 +44,7 @@
             <div class="container">
                 <div class="masthead-subheading">Welcome To RecSys.Scifi!</div>
                 <div class="masthead-heading text-uppercase">Recommender Systems Datasets in Scientific Fields</div>
+                <div class="masthead-subheading">SIGKDD 2021 Tutorial Accepted!</div> 
                 <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#about">More</a>
             </div>
         </header>
@@ -65,14 +66,14 @@
                         
                         <p class="text-muted">In scientific fields, such as Health and Chemistry, standard and open access datasets with the information about the preferences of the users are scarce. </p>
                             
-                        <p class="text-muted">First, it is important to understand the application domain, i.e. “what the recommended item is”. Second, who are the end users: researchers, pharmacists, clinicians or policy makers. Third, the availability of data. Thus, if we wish to develop an algorithm for recommending scientific items, we do not have access to datasets with information about the past preferences of a group of users. Given this limitation, we developed a methodology (called <b>LIBRETTI - LIterature Based RecommEndaTion of scienTific Items</b> whose goal is the creation of &lt;user, item, rating&gt;  datasets, related with scientific fields. </p>
+                        <p class="text-muted">First, it is important to understand the application domain, i.e. “what the recommended item is”. Second, who are the end users: researchers, pharmacists, clinicians or policy makers. Third, the availability of data. Thus, if we wish to develop an algorithm for recommending scientific items, we do not have access to datasets with information about the past preferences of a group of users. Given this limitation, we developed a methodology (called <b>LIBRETTI - LIterature Based RecommEndaTion of scienTific Items</b>) whose goal is the creation of &lt;user, item, rating&gt;  datasets, related with scientific fields. </p>
                             
                         <p class="text-muted">The datasets are created based on the major resource of knowledge that Science has: <b>scientific literature</b>. </p>
                         
                         <p class="text-muted">We consider the users as the authors of the publications, the items as the scientific entities (for example chemical compounds or diseases), and the ratings as the number of publications an author wrote about an entity. </p>
                         <!-- line -->
                         <hr>
-                        <h3 class="section-subheading">The output of this tutorial will be an open source recommendation dataset for diseases and drugs related to COVID-19, which may be used for training new recommendation algorithms. You can find an example of a dataset created using LIBRETTI.</h3>
+                        <h3 class="section-subheading">The output of this tutorial will be an open source recommendation dataset for diseases and drugs related to <a href="https://www.semanticscholar.org/cord19">COVID-19</a>, which may be used for training new recommendation algorithms. You can find an example of a dataset created using LIBRETTI.</h3>
                                                     
                     </div>
                 </div>
@@ -209,7 +210,7 @@
                 <div class="row align-items-center">
                     <div class="col-lg-14 mx-auto text-center">
                         <h2 class="section-heading text-uppercase">acknowledgements</h2>
-                        <p class="large text-muted">This work was supported by FCT through funding of Deep Semantic Tagger (DeST) project (ref. PTDC/CCI-BIO/28685/2017), LASIGE Research Unit (ref. UIDB/00408/2020 and ref. UIDP/00408/2020), and PhD Scholarship ref. SFRH/BD/128840/2017, KNODIS</p>  
+                        <p class="large text-muted">This work was supported by the Fundação para a Ciência e Tecnologia (FCT), under LASIGE Strategic Project UIDB/00408/2020, FCT funded project PTDC/CCI-BIO/28685/2017 and PhD Scholarship SFRH/BD/128840/2017.</p>  
                 </div>
                     <div class="col-md-3 col-sm-6 my-3">
                         <a href="https://www.fct.pt/index.phtml.pt"><img class="img-fluid img-brand d-block mx-auto" src="assets/img/logos/fct_v_logo.svg" alt="..." /></a>
@@ -325,7 +326,12 @@
                                                     <dd>Presentation of the LIBRETTI pipeline</dd>
                                                     <dd>Presentation of works which used LIBRETTI datasets in the fields of Astronomy, Chemistry, and Health.</dd>
                                             </dl>
-
+                                        <hr>
+                                        <div class="row text-justify col-md-14 text-muted">
+                                            <p>                                
+                                                Ruas, P., Lamurias, A. & Couto, F.M. Linking chemical and disease entities to ontologies by integrating PageRank with extracted relations from literature. J Cheminform 12, 57 (2020). https://doi.org/10.1186/s13321-020-00461-4
+                                            </p>
+                                        </div>
                                     <ul class="list-inline">
                                         <li>Duration: 70 minutes</li>
                                     </ul>
@@ -354,20 +360,34 @@
                                     <p class="item-intro text-muted">Part II: Creating a recommendation dataset through scientific literature</p>
                                     <!--<img class="img-fluid d-block mx-auto" src="assets/img/program/data.jpg" alt="..." />-->
                                             <dl>
-                                                <dt>Retrieve the research articles related to COVID-19 (Pedro Ruas)</dt>
-                                                    <dd>The input used for creating the recommendation dataset will be a sample of the COVID-19 Open Research Dataset (CORD-19).</dd>
+                                                <dt>Retrieve the research articles related to COVID-19 (Pedro Ruas) - 20 minutes</dt>
+                                                    <dd>The input used for creating the recommendation dataset will be a sample of the COVID-19 Open Research Dataset (<a href="https://www.semanticscholar.org/cord19">CORD-19</a>).</dd>
                                                                                                 
-                                                <dt>Named Entity Recognition (NER) and Linking (NEL) </dt>
+                                                <dt>Named Entity Recognition (NER) and Linking (NEL) (Pedro Ruas) - 30 minutes</dt>
                                                     <dd>Extract and normalize entities from the CORD-19 dataset. It includes the opening of each json file and the application of a NER tool on the title, abstract, body text and captions, according to the segmentations provided on the original corpus.
                                                     </dd>
-                                                    <dd>Recognize the entities in the text with MER tool. The entities that we want to recognize are diseases and drugs, thus, we will use the Disease Ontology (DO), and the Chemical Entities of Biological Interest (ChEBI) ontology as input lexicons for MER.</dd>
-                                                <dt> Creating the recommendation dataset (Márcia Barros/Matilde Pato)</dt>
-                                                    <dd>Create a standard dataset of &lt;user, item, rating&gt; with LIBRETTI methodology. The users are the authors from the research articles, and the items are the entities recognized in the NER phase in each article.</dd>
-                                                    <dd>The output of this tutorial will be an open source recommendation dataset for diseases and drugs related to COVID-19, which may be used for training new recommendation algorithms. You can find an example of a dataset created using LIBRETTI.</dd>
+                                                    <dd>Recognize the entities in the text with <a href=" https://pypi.org/project/merpy/">MER</a> tool. The entities that we want to recognize are diseases and drugs, thus, we will use the <a href="https://disease-ontology.org/">Disease Ontology</a> (DO), and the <a href="https://www.ebi.ac.uk/chebi/">Chemical Entities of Biological Interest</a> (ChEBI) ontology as input lexicons for MER.</dd>
+                                                
+                                                <dt> Creating the recommendation dataset (Márcia Barros/Matilde Pato) - 40 minutes</dt>
+                                                    <dd>Create a standard dataset of &lt;user, item, rating&gt; with LIBRETTI methodology. The users are the authors from the research articles, and the items are the entities recognized in the NER phase in each article. Similar approach should be found <a href="https://github.com/lasigeBioTM/knowledge-extraction-from-CORD-19">here</a>.</dd>
+                                                    <dd>The output of this tutorial will be an open source recommendation dataset for diseases and drugs related to COVID-19, which may be used for training new recommendation algorithms. You can find an example of a dataset created using LIBRETTI <a href="https://github.com/lasigeBioTM/blah7/blob/main/4.recommender_system/create_datasets/data_example/blah7_abstracts_large_recsys_dataset_user_item_rating_enspa.csv">here</a>.</dd>
                                             </dl>
-
+                                    
+                                    <hr>
+                                    <div class="row text-justify col-md-14 text-muted">
+                                        <p>
+                                            Barros M, Moitinho A, Couto FM. Hybrid semantic recommender system for chemical compounds in large-scale datasets. J Cheminform. 2021 Feb 23;13(1):15. doi: 10.1186/s13321-021-00495-2. PMID: 33622374; PMCID: PMC7903631. <br />
+                                            
+                                            Barros, M. A., Lamurias, A., Sousa, D. F., Ruas, P., & Couto, F. M. COVID-19: A Semantic-Based Pipeline for Recommending Biomedical Entities. Proceedings of the 1st Workshop on NLP for COVID-19 (Part 2) at EMNLP 2020. https://doi.org/10.18653/v1/2020.nlpcovid19-2.20<br />
+                                            
+                                            Couto, F.M., Lamurias, A. MER: a shell script and annotation server for minimal named entity recognition and linking. J Cheminform 10, 58 (2018). https://doi.org/10.1186/s13321-018-0312-9<br />
+                                            
+                                            M. Barros, A. Moitinho and F. M. Couto Using Research Literature to Generate Datasets of Implicit Feedback for Recommending Scientific Items in IEEE Access, vol. 7, pp. 176668-176680, 2019, doi: 10.1109/ACCESS.2019.2958002 <br />   
+                                        
+                                        </p>
+                                    </div>
                                     <ul class="list-inline">
-                                        <li>Duration: 230 minutes</li>
+                                        <li>Duration: 90 minutes</li>
                                     </ul>
                                     <button class="btn btn-primary" data-dismiss="modal" type="button">
                                         <i class="fas fa-times mr-1"></i>
